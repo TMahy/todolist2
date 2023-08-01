@@ -1,0 +1,355 @@
+*{
+    /* border: 1px solid black; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+
+:root{
+    --clr-1: #219ebc; 
+    --clr-2: #eaeaea;
+    --clr-3: #d2d2d2;
+    --clr-4: #656565;
+}
+
+/* Page Styling */
+
+#top-bar{
+    height: 40px;
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: var(--clr-1);
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 5px
+}
+
+#side-bar {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    max-width: 250px;  /* Set the width of the sidebar */
+    min-width: 200px;
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 40px; 
+    left: 0;
+    background-color: var(--clr-2); /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+  }
+
+#side-bar-hr{ 
+    width: 160px;
+    border: 2px solid var(--clr-3);
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Top bar styling */
+#top-bar-icon{
+    border-radius: 2px;
+    padding: 3px;
+    margin-top: 5px;
+    margin-left: 5px;
+    background-color: var(--clr-2);
+}
+
+#top-bar i{
+    color: var(--clr-1);
+}
+
+#top-bar #top-bar-title{
+    font-weight: bold;
+    color: var(--clr-2);
+}
+
+#top-bar #top-bar-subtitle{
+    font-weight:10px;
+    font-size: 0.8em;
+    color: var(--clr-3);
+}
+
+/* Projects pane styling */
+
+.projects-list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+    width: 160px;
+    margin-left: 20px;
+}
+
+.projects-list div{
+    padding: 5px 0px 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.projects-list div:not(.selected):hover{
+    background-color: var(--clr-3);
+}
+
+.projects-list .selected{
+    background-color: #ffb703;
+}
+
+/* New project button styling */
+
+#btn-new-project{
+    border-radius: 20px;
+    background-color: var(--clr-3);
+    /* color: var(--clr-4); */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    gap: 10px;
+    width: 160px;
+    margin-left: 20px;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 4px;
+    padding-top: 2px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#btn-new-project:hover{
+    background-color: #66bb6a;
+}
+
+#new-project-icon{
+    top: 2px;
+    margin-left: auto;
+    margin-right: 6px;
+    margin-top: 2.5px;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    background-color: var(--clr-2);
+}
+
+#new-project-icon i{
+    color: var(--clr-4);
+    position: relative;
+    left: 2.5px;
+    
+}
+
+/* to do list styling */
+
+#content {
+    margin-top: 60px;
+    margin-left: 250px; /* Same as the width of the sidebar */
+    padding: 0px 10px;
+}
+
+/* Title and hr */
+.project-title{
+    font-size: 1.5em;
+    margin-bottom: 0px;
+}
+
+.content-hr{ 
+    width: 90%;
+    border: 2px solid var(--clr-2);
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 0;
+}
+
+/* Todo list styling */
+.todo-list{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+}
+
+/* Todo item styling */
+
+.todo{
+    background-color: var(--clr-2);
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: start;
+    gap: 15px;
+    padding: 10px 0px 10px 10px;
+    border-radius: 10px;
+    min-width: 100px;
+    max-width: 90%;
+    cursor: pointer;
+}
+
+.todo-details{
+    border-radius: 10px;
+    padding: 0px 5px 0px 5px;
+    display: grid;
+
+}
+
+.todo-details .todo-title{
+    margin-top: 0px;
+    margin-bottom: 5px;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.todo-details .todo-duedate{
+    grid-row: 2;
+    grid-column: 1;
+}
+
+.todo-priority{
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+
+/* Round checkbox */
+.round {
+    position: relative;
+}
+  
+.round label {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 28px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 28px;
+}
+ 
+/* Tick */
+.round label:after {
+    border: 2px solid #fff;
+    border-top: none;
+    border-right: none;
+    content: "";
+    height: 6px;
+    left: 6px;
+    opacity: 0;
+    position: absolute;
+    top: 7px;
+    transform: rotate(-45deg);
+    width: 12px;
+}
+  
+.round input[type="checkbox"] {
+    visibility: hidden;
+}
+  
+.round input[type="checkbox"]:checked + label {
+    background-color: #66bb6a;
+    border-color: #66bb6a;
+}
+  
+.round input[type="checkbox"]:checked + label:after {
+    opacity: 1;
+}
+
+/* New to do button */
+#btn-new-todo{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    border-radius: 50%;
+    /* border: 2px solid var(--clr-1); */
+}
+
+#new-todo-icon{
+    width: 50px;
+    height: 50px;
+    background-color: var(--clr-1);
+    border-radius: 50%;
+    transition: background-color 0.2 ease-in-out;
+}
+
+#new-todo-icon:hover{
+    background-color: #66bb6a;
+}
+
+#new-todo-icon i{
+    font-size: 30px;
+    position: relative;
+    color: white;
+    top: 11px;
+    left: 12px;
+}
+
+
+
+/* Form stylings */
+#new-project-form-container{
+    display: none;
+}
+#new-todo-form-container{
+    display: none;
+}
+
+.form-container{
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(123, 123, 123, 0.6);
+}
+
+.form-buttons{
+    margin-left:  auto;
+}
+
+.form-buttons button{
+    border: none;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: var(--clr-1);
+}
+
+.form-buttons i{
+    color: var(--clr-2);
+    font-size: 1.2em;   
+}
+
+.form-cancel:hover{
+    background-color: #d35050;
+}
+
+.form-submit:hover{
+    background-color: #66bb6a;
+}
+
+.description-text{
+    padding: 0 0 60px 0;
+}
+
+.form{
+    position: fixed;
+    opacity: 1;
+    background-color: var(--clr-2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 5px;
+    width: 300px;
+    min-height: 300px;
+    left:calc(50vw - 150px);
+    top: calc(50vh - 300px);
+    padding: 0px 20px 10px 20px;
+    border-radius: 10px;
+}
+
+.form h3{
+    margin-bottom: 0px;
+}

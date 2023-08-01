@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+<div id='container'>
+    <div id="top-bar">
+        <div id="top-bar-icon"><i class="fa-solid fa-list-check"></i></div>
+        <div id="top-bar-title">3 Do List</div>
+        <div id="top-bar-subtitle">Because 2 dos is not enough</div>
+    </div>
+    <div id="side-bar">
+        <div id="default-projects" class="projects-list">
+            <div id="project-all" class="selected">All</div>
+        </div>
+        <hr id="side-bar-hr">
+        <div id="user-projects" class="projects-list">
+            
+        </div>
+        <div id="btn-new-project">New Project<div id="new-project-icon"><i class="fa-solid fa-plus"></i></div></div>
+    </div>
+    <div id="content">
+        <div class="project">
+            <div class="project-title" id="project-title">All</div>
+            <hr class="content-hr">
+        </div>
+        <div class="todo-list" id="todo-list">
+            
+        </div>
+        <div id="btn-new-todo"><div id="new-todo-icon"><i class="fa-solid fa-plus"></i></div></div>
+    </div>
+    <div id="new-project-form-container" class='form-container'>
+        <form action="" id="new-project-form" class=form>
+            <h3>New Project</h3>
+            <label for="project-title-input">Title</label>
+            <input type="text" id="project-title-input" required/>
+            <label for="project-description-input">Description</label>
+            <input type="text" id='project-description-input' class="description-text"/>
+            <div class="form-buttons">
+                <button type='button' class="form-cancel" id="btn-project-cancel"><i class="fa-solid fa-xmark"></i></button>
+                <button type="submit" class="form-submit" id="btn-project-create"><i class="fa-solid fa-check"></i></button>
+            </div>
+        </form>
+    </div>
+    <div id="new-todo-form-container" class='form-container'>
+        <form action="" id="new-todo-form" class="form">
+            <h3>New Todo</h3>
+            <label for="todo-title-input">Title</label>
+            <input type="text" id="todo-title-input" required/>
+            <label for="todo-project-input">Select a project</label>
+            <select id="todo-project-input">
+                <option value="none" selected>None</option>
+            </select>
+            <label for="todo-duedate-input">Due Date</label>
+            <input type="date" id="todo-duedate-input" required/>
+            <label for="todo-priority-input">Priority</label>
+            <select id="todo-priority-input" required>
+                <option value="1">Low</option>
+                <option value="2">Medium</option>
+                <option value="3">High</option>
+            </select>
+            <div class="form-buttons">
+                <button type='button' class="form-cancel" id="btn-todo-cancel"><i class="fa-solid fa-xmark"></i></button>
+                <button type="submit" class="form-submit" id="btn-todo-create"><i class="fa-solid fa-check"></i></button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+<script src="script.js"></script>
+<script src="https://kit.fontawesome.com/1170179a49.js" crossorigin="anonymous"></script>
+</html>
